@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Component // 자동으로 bean name이 memoryMemberRepository로 등록된다.
 public class MemoryMemberRepository implements MemberRepository{
 
     // 동시성 이슈가 있을 수 있기 때문에 현업에서는 ConcurrentHashMap을 쓰는게 좋음

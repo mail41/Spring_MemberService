@@ -4,7 +4,6 @@ import ch.fixy.AppConfig;
 import ch.fixy.member.Grade;
 import ch.fixy.member.Member;
 import ch.fixy.member.MemberService;
-import ch.fixy.service.OrderService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

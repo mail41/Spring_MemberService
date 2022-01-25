@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- AppConfig에서빈생성하는 것을 xml에서 똑같이 만들어 보자 -->
-    <bean id="memberService" class="ch.fixy.service.MemberServiceImpl">
+    <bean id="memberService" class="ch.fixy.member.MemberServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
     </bean>
 
     <bean id="memberRepository" class="ch.fixy.repository.MemoryMemberRepository"/>
 
-    <bean id="orderService" class="ch.fixy.service.OrderServiceImpl">
+    <bean id="orderService" class="ch.fixy.order.OrderServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
         <constructor-arg name="discountPolicy" ref="discountPolicy"/>
     </bean>

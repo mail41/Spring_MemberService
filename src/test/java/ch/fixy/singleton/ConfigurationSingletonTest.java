@@ -1,14 +1,13 @@
 package ch.fixy.singleton;
 
 import ch.fixy.AppConfig;
-import ch.fixy.member.Member;
+import ch.fixy.member.MemberServiceImpl;
 import ch.fixy.repository.MemberRepository;
-import ch.fixy.service.MemberServiceImpl;
 import ch.fixy.service.OrderServiceImpl;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ConfigurationSingletonTest {

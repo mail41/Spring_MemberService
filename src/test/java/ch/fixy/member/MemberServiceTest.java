@@ -1,8 +1,6 @@
 package ch.fixy.member;
 
 import ch.fixy.AppConfig;
-import ch.fixy.service.MemberService;
-import ch.fixy.service.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

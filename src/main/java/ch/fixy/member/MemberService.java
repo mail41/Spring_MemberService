@@ -1,4 +1,4 @@
-package ch.fixy.service;
+package ch.fixy.member;
 
 import ch.fixy.member.Member;
 

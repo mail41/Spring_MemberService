@@ -2,11 +2,11 @@ package ch.fixy;
 
 import ch.fixy.discount.DiscountPolicy;
 import ch.fixy.discount.FixDiscountPolicy;
+import ch.fixy.member.MemberService;
+import ch.fixy.member.MemberServiceImpl;
+import ch.fixy.order.OrderService;
+import ch.fixy.order.OrderServiceImpl;
 import ch.fixy.repository.MemoryMemberRepository;
-import ch.fixy.service.MemberService;
-import ch.fixy.service.MemberServiceImpl;
-import ch.fixy.service.OrderService;
-import ch.fixy.service.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,8 +1,7 @@
 package ch.fixy.singleton;
 
 import ch.fixy.AppConfig;
-import ch.fixy.service.MemberService;
-import org.assertj.core.api.Assertions;
+import ch.fixy.member.MemberService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

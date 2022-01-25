@@ -2,11 +2,9 @@ package ch.fixy;
 
 import ch.fixy.member.Grade;
 import ch.fixy.member.Member;
+import ch.fixy.member.MemberService;
 import ch.fixy.order.Order;
-import ch.fixy.service.MemberService;
-import ch.fixy.service.MemberServiceImpl;
-import ch.fixy.service.OrderService;
-import ch.fixy.service.OrderServiceImpl;
+import ch.fixy.order.OrderService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

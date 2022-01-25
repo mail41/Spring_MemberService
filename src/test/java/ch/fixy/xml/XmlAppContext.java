@@ -1,6 +1,6 @@
 package ch.fixy.xml;
 
-import ch.fixy.service.MemberService;
+import ch.fixy.member.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;

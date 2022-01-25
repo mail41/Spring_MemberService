@@ -2,7 +2,7 @@ package ch.fixy;
 
 import ch.fixy.member.Grade;
 import ch.fixy.member.Member;
-import ch.fixy.service.MemberService;
+import ch.fixy.member.MemberService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

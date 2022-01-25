@@ -2,7 +2,9 @@ package ch.fixy.discount;
 
 import ch.fixy.member.Grade;
 import ch.fixy.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;

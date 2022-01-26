@@ -3,10 +3,12 @@ package ch.fixy.order;
 import ch.fixy.discount.DiscountPolicy;
 import ch.fixy.member.Member;
 import ch.fixy.repository.MemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("Service")
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     /*
@@ -31,38 +33,40 @@ public class OrderServiceImpl implements OrderService {
         -> 클라이언트 객체인 OrderServiceImpl은 실행하는 책임만 담당하고,
            구현객체를 생성하고 연결하는 책임은 AppConfig가 담당한다.
      */
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
     // 필드 주입
     // @Autowired private DiscountPolicy discountPolicy;
 
     // 수정자 주입(setter)
-    @Autowired(required = false) // 선택적으로 사용
-    public void setMemberRepository(MemberRepository memberRepository){
-        System.out.println("memberRepository = " + memberRepository);
-        this.memberRepository = memberRepository;
-    }
-
-    @Autowired
-    public void setDiscountPolicy(DiscountPolicy discountPolicy){
-        System.out.println("discountPolicy = " + discountPolicy);
-        this.discountPolicy = discountPolicy;
-    }
+    // @Autowired(required = false) : 선택적으로 사용
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository){
+//        System.out.println("memberRepository = " + memberRepository);
+//        this.memberRepository = memberRepository;
+//    }
+//
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy){
+//        System.out.println("discountPolicy = " + discountPolicy);
+//        this.discountPolicy = discountPolicy;
+//    }
 
     // final로 생성자 주입 : new OrderServiceImpl(memberRepository, discountPolicy)
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("첫번째 호출 OrderServiceImpl.OrderServiceImpl");
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+    // lombok의 @RequiredArgsConstructor를 사용하면 알아서 생성자를 만들어준다.
+//    @Autowired
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        System.out.println("첫번째 호출 OrderServiceImpl.OrderServiceImpl");
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     // 일반 메서드 주입
-    @Autowired
-    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy){
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    @Autowired
+//    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy){
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

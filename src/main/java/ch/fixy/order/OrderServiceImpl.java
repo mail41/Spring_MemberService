@@ -1,14 +1,16 @@
 package ch.fixy.order;
 
+import ch.fixy.annotation.MainDiscountPolicy;
 import ch.fixy.discount.DiscountPolicy;
 import ch.fixy.member.Member;
 import ch.fixy.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("Service")
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     /*
@@ -54,12 +56,12 @@ public class OrderServiceImpl implements OrderService {
 
     // final로 생성자 주입 : new OrderServiceImpl(memberRepository, discountPolicy)
     // lombok의 @RequiredArgsConstructor를 사용하면 알아서 생성자를 만들어준다.
-//    @Autowired
-//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//        System.out.println("첫번째 호출 OrderServiceImpl.OrderServiceImpl");
-//        this.memberRepository = memberRepository;
-//        this.discountPolicy = discountPolicy;
-//    }
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        System.out.println("첫번째 호출 OrderServiceImpl.OrderServiceImpl");
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     // 일반 메서드 주입
 //    @Autowired

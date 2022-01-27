@@ -1,10 +1,15 @@
 package ch.fixy.discount;
 
+import ch.fixy.annotation.MainDiscountPolicy;
 import ch.fixy.member.Grade;
 import ch.fixy.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@MainDiscountPolicy
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;
